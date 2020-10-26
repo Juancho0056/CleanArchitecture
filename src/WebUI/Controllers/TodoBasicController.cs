@@ -21,7 +21,7 @@ namespace CleanArchitecture.WebUI.Controllers
     
     [OpenApiTagAttribute("TodoBasic",
            Description = "Controlador TodoBasic.")]
-    public class BienJuridicoController : ApiController
+    public class TodoBasicController : ApiController
     {
         /// <summary>
         /// Add TodoBasic
@@ -65,7 +65,7 @@ namespace CleanArchitecture.WebUI.Controllers
         ///// </remarks>
         ///// <param name="command">Instance for DeleteTodoBasicRequest</param>
         ///// <returns></returns>
-        //// POST: api/BienJuridico/Delete
+        //// POST: api/TodoBasic/Delete
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status401Unauthorized)]
         [ProducesDefaultResponseType]

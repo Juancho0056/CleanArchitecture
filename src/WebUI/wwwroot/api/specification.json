@@ -6,12 +6,12 @@
     "version": "v1"
   },
   "paths": {
-    "/api/BienJuridico/Create": {
+    "/api/TodoBasic/Create": {
       "post": {
         "tags": [
           "TodoBasic"
         ],
-        "operationId": "BienJuridico_Create",
+        "operationId": "TodoBasic_Create",
         "requestBody": {
           "x-name": "command",
           "content": {
@@ -58,12 +58,12 @@
         }
       }
     },
-    "/api/BienJuridico/Update": {
+    "/api/TodoBasic/Update": {
       "patch": {
         "tags": [
           "TodoBasic"
         ],
-        "operationId": "BienJuridico_Update",
+        "operationId": "TodoBasic_Update",
         "requestBody": {
           "x-name": "command",
           "content": {
@@ -110,12 +110,12 @@
         }
       }
     },
-    "/api/BienJuridico/Delete": {
+    "/api/TodoBasic/Delete": {
       "delete": {
         "tags": [
           "TodoBasic"
         ],
-        "operationId": "BienJuridico_Delete",
+        "operationId": "TodoBasic_Delete",
         "requestBody": {
           "x-name": "command",
           "content": {
@@ -162,12 +162,12 @@
         }
       }
     },
-    "/api/BienJuridico/GetAll": {
+    "/api/TodoBasic/GetAll": {
       "get": {
         "tags": [
           "TodoBasic"
         ],
-        "operationId": "BienJuridico_GetAll",
+        "operationId": "TodoBasic_GetAll",
         "responses": {
           "200": {
             "description": "",
@@ -185,12 +185,12 @@
         }
       }
     },
-    "/api/BienJuridico/Get": {
+    "/api/TodoBasic/Get": {
       "get": {
         "tags": [
           "TodoBasic"
         ],
-        "operationId": "BienJuridico_Get",
+        "operationId": "TodoBasic_Get",
         "parameters": [
           {
             "name": "key",
