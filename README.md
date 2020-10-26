@@ -1,5 +1,5 @@
 # CleanArchitecture
 
-dotnet new --install [PATH] 
+Ejecute dotnet new --install [PATH] para instalar la plantilla.
 crear una carpeta donde ubicara el proyecto.
-dotnet new ca-webapi
+y ejecutar el comando dotnet new ca-webapi
