@@ -7,7 +7,6 @@ using Microsoft.AspNet.OData;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using NSwag.Annotations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,11 +15,8 @@ using System.Threading.Tasks;
 namespace CleanArchitecture.WebUI.Controllers
 {
     /// <summary>
-    /// Controlador de acciones rest. rest/TodoBasicController
+    /// Controlador de acciones api/TodoBasicController
     /// </summary>
-    
-    [OpenApiTagAttribute("TodoBasic",
-           Description = "Controlador TodoBasic.")]
     public class TodoBasicController : ApiController
     {
         /// <summary>

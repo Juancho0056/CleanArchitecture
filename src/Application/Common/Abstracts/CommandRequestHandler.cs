@@ -23,9 +23,9 @@ namespace CleanArchitecture.Application.Common.Abstracts
         {
             try
             {
-                await _context.BeginTransactionAsync();
+                //await _context.BeginTransactionAsync();
                 TData vm = await HandleCommand(request, cancellationToken);
-                await _context.CommitTransactionAsync();
+                //await _context.CommitTransactionAsync();
 
                 return CommandResult<TData>.Ok(vm);
             }

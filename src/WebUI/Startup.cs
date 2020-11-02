@@ -16,8 +16,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Net.Http.Headers;
-using NSwag;
-using NSwag.Generation.Processors.Security;
 using System.Linq;
 
 namespace CleanArchitecture.WebUI
@@ -103,12 +101,12 @@ namespace CleanArchitecture.WebUI
                 app.UseSpaStaticFiles();
             }
 
-            app.UseSwaggerUi3(settings =>
-            {
-                settings.Path = "/api";
-                settings.DocumentPath = "/api/specification.json";
-            });
-
+            //app.UseSwaggerUi3(settings =>
+            //{
+            //    settings.Path = "/api";
+            //    settings.DocumentPath = "/api/specification.json";
+            //});
+            app.ConfigureSwaggerUI();
             app.UseRouting();
             app.ConfigureCors();
             app.UseAuthentication();

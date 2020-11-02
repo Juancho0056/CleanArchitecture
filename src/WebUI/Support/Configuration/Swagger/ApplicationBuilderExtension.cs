@@ -10,13 +10,17 @@ namespace CleanArchitecture.WebUI.Support.Configuration.Swagger
     {
         public static IApplicationBuilder ConfigureSwaggerUI(this IApplicationBuilder app)
         {
-            app.UseSwaggerUi3(settings =>
+            //app.UseSwaggerUi3(settings =>
+            //{
+
+            //    settings.Path = "/api";
+            //    settings.DocumentPath = "/api/specification.json";
+            //});
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
             {
-
-                settings.Path = "/api";
-                settings.DocumentPath = "/api/specification.json";
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "CleanArchitecture Services v1");
             });
-
             return app;
         }
 
