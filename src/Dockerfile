@@ -20,3 +20,5 @@ FROM base AS final
 WORKDIR /app
 COPY --from=publish /app .
 ENTRYPOINT ["dotnet", "CleanArchitecture.WebUI.dll"]
+RUN chmod +x ./entrypoint.sh
+CMD /bin/bash ./entrypoint.sh
