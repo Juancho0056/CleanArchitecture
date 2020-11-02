@@ -8,7 +8,7 @@ COPY ["WebUI/WebUI.csproj", "./"]
 RUN dotnet restore "WebUI/WebUI.csproj"
 COPY . .
 WORKDIR "/src/."
-RUN dotnet build "WebUI/WebUI.csproj" -c Release -o /app
+RUN dotnet build "/WebUI/WebUI.csproj" -c Release -o /app
 
 FROM build AS publish
 RUN dotnet publish "WebUI/WebUI.csproj" -c Release -o /app
