@@ -4,6 +4,9 @@ EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
 WORKDIR /src
+COPY ["Infrastructure/Infrastructure.csproj", "./"]
+COPY ["Application/Application.csproj", "./"]
+COPY ["Domain/Domain.csproj", "./"]
 COPY ["WebUI/WebUI.csproj", "./"]
 RUN dotnet restore "./WebUI.csproj"
 COPY . .
