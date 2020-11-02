@@ -4,17 +4,17 @@ EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
 WORKDIR /src
-COPY ["Infrastructure/Infrastructure.csproj", "./"]
-COPY ["Application/Application.csproj", "./"]
-COPY ["Domain/Domain.csproj", "./"]
-COPY ["WebUI/WebUI.csproj", "./"]
+COPY ["Infrastructure/Infrastructure.csproj", "Infrastructure/"]
+COPY ["Application/Application.csproj", "Application/"]
+COPY ["Domain/Domain.csproj", "Domain/"]
+COPY ["WebUI/WebUI.csproj", "WebUI/"]
 RUN dotnet restore "./WebUI.csproj"
 COPY . .
-WORKDIR "/src/."
-RUN dotnet build "./WebUI/WebUI.csproj" -c Release -o /app
+WORKDIR "/src/WebUI"
+RUN dotnet build "WebUI.csproj" -c Release -o /app
 
 FROM build AS publish
-RUN dotnet publish "./WebUI/WebUI.csproj" -c Release -o /app
+RUN dotnet publish "WebUI.csproj" -c Release -o /app
 
 FROM base AS final
 WORKDIR /app
