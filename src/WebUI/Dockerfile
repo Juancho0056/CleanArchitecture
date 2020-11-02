@@ -4,14 +4,14 @@ EXPOSE 61846
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
 WORKDIR /src
-COPY ["WebUI.csproj", "./"]
-RUN dotnet restore "./WebUI.csproj"
+COPY ["/WebUI/WebUI.csproj", "./"]
+RUN dotnet restore "./WebUI/WebUI.csproj"
 COPY . .
 WORKDIR "/src/."
-RUN dotnet build "WebUI.csproj" -c Release -o /app
+RUN dotnet build "/WebUI/WebUI.csproj" -c Release -o /app
 
 FROM build AS publish
-RUN dotnet publish "WebUI.csproj" -c Release -o /app
+RUN dotnet publish "/WebUI/WebUI.csproj" -c Release -o /app
 
 FROM base AS final
 WORKDIR /app
