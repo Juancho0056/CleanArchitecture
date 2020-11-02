@@ -1,12 +1,12 @@
 ﻿FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS base
 WORKDIR /app
-EXPOSE 80
+EXPOSE 61846
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
 WORKDIR /src
 COPY ["WebUI.csproj", "./"]
 RUN dotnet restore "./WebUI.csproj"
-COPY ..
+COPY . .
 WORKDIR "/src/."
 RUN dotnet build "WebUI.csproj" -c Release -o /app
 
