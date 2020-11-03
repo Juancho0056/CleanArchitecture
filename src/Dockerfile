@@ -8,7 +8,7 @@ COPY ["Infrastructure/Infrastructure.csproj", "Infrastructure/"]
 COPY ["Application/Application.csproj", "Application/"]
 COPY ["Domain/Domain.csproj", "Domain/"]
 COPY ["WebUI/WebUI.csproj", "WebUI/"]
-COPY ["CleanArchitecture.WebUI.xml", "WebUI/"]
+COPY ["WebUI/CleanArchitecture.WebUI.xml", "./"]
 RUN dotnet restore "WebUI/WebUI.csproj"
 COPY . .
 WORKDIR "/src/WebUI"
