@@ -54,7 +54,7 @@ namespace CleanArchitecture.WebUI
             {
                 options.SuppressModelStateInvalidFilter = true;
             });
-
+            services.AddSpaStaticFiles();
             // In production, the Angular files will be served from this directory
             //services.AddSpaStaticFiles(configuration =>
             //{
