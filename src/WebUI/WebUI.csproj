@@ -14,10 +14,12 @@
     <!-- Set this to true if you enable server-side prerendering -->
     <BuildServerSideRenderer>false</BuildServerSideRenderer>
     <ApplicationInsightsResourceId>/subscriptions/5d2ec2b2-619a-4baa-b86a-b7ac092fff7b/resourcegroups/Default-ApplicationInsights-EastUS/providers/microsoft.insights/components/WebUI</ApplicationInsightsResourceId>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>D:\Repositorios\PlantillaClean\CleanArchitecture\src\WebUI\CleanArchitecture.WebUI.xml</DocumentationFile>
+    <!--<DocumentationFile>D:\Repositorios\PlantillaClean\CleanArchitecture\src\WebUI\CleanArchitecture.WebUI.xml</DocumentationFile>-->
+    <DocumentationFile>bin\$(Configuration)\CleanArchitecture.WebUI.xml</DocumentationFile>
     <NoWarn>1701;1702;1591</NoWarn>
     <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
   </PropertyGroup>
