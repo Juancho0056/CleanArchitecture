@@ -8,6 +8,7 @@ COPY ["Infrastructure/Infrastructure.csproj", "Infrastructure/"]
 COPY ["Application/Application.csproj", "Application/"]
 COPY ["Domain/Domain.csproj", "Domain/"]
 COPY ["WebUI/WebUI.csproj", "WebUI/"]
+COPY ["entrypoint.sh", "WebUI/"]
 RUN dotnet restore "WebUI/WebUI.csproj"
 COPY . .
 WORKDIR "/src/WebUI"
@@ -20,5 +21,6 @@ FROM base AS final
 WORKDIR /app
 COPY --from=publish /app .
 ENTRYPOINT ["dotnet", "CleanArchitecture.WebUI.dll"]
+WORKDIR /src
 RUN chmod +x ./entrypoint.sh
 CMD /bin/bash ./entrypoint.sh
